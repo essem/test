@@ -8,6 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: echo '{"git":"${{ github.sha }}","git":"${{ github.event.release.tag_name }}"}'
       - run: echo '${{ toJson(github) }}'
       - name: Dump GitHub context
         env:
